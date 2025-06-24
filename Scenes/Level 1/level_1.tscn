@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://c0ovo5ghyym8x"]
+[gd_scene load_steps=28 format=4 uid="uid://c0ovo5ghyym8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj358lxqs66x0" path="res://Assets/Environment/Ground/terrain.tscn" id="1_wct5o"]
 [ext_resource type="PackedScene" uid="uid://rvpx2yntsr4u" path="res://Assets/Player/player.tscn" id="2_w4ye8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4jqgufevxxl5" path="res://Assets/Environment/moutians/Mountain 1/Mountain 1.tscn" id="6_gk6vi"]
 [ext_resource type="PackedScene" uid="uid://eu760qe08ra2" path="res://Assets/Environment/moutians/Mountain 2/Mountain 2.tscn" id="7_cfp1e"]
 [ext_resource type="PackedScene" uid="uid://juqt68gl426x" path="res://Assets/Environment/moutians/Mountain 3/Mountain 3.tscn" id="8_6g6qt"]
+[ext_resource type="PackedScene" uid="uid://d2t2yfxq8ilao" path="res://Assets/Environment/chicken coop/Chicken coop.tscn" id="9_2i1ss"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67b0c"]
 resource_name = "Material.001"
@@ -230,8 +231,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -832.861, 0, 746.262)
 
 [node name="terrain" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -94.0508)
-
-[node name="grass" type="Node3D" parent="Map"]
 
 [node name="all trees" type="Node3D" parent="Map"]
 
@@ -1000,6 +999,24 @@ transform = Transform3D(5.2068, 0, -0.417454, 0, 4.20678, 0, 0.559113, 0, 3.8875
 
 [node name="Mountain 66" parent="Map/all mountains/Mountains3" instance=ExtResource("8_6g6qt")]
 transform = Transform3D(5.2068, 0, -0.417454, 0, 4.20678, 0, 0.559113, 0, 3.88759, -829.476, 0, -2912.47)
+
+[node name="Chicken coop" parent="Map" instance=ExtResource("9_2i1ss")]
+transform = Transform3D(-0.994325, 0, -0.106386, 0, 1, 0, 0.106386, 0, -0.994325, -13.491, 1.05605, 104.629)
+
+[node name="Chicken coop2" parent="Map" instance=ExtResource("9_2i1ss")]
+transform = Transform3D(1.02582, 0, -0.0137354, 0, 1, 0, -0.0140914, 0, -0.999906, 21.8124, 1.05605, 100.852)
+
+[node name="Chicken coop3" parent="Map" instance=ExtResource("9_2i1ss")]
+transform = Transform3D(-0.966991, 0, 0.241515, 0, 1, 0, -0.240668, 0, -0.970397, 46.9204, 1.05605, 100.507)
+
+[node name="Chicken coop4" parent="Map" instance=ExtResource("9_2i1ss")]
+transform = Transform3D(-0.952167, 0, -0.294924, 0, 1, 0, 0.293889, 0, -0.955521, 61.7152, 1.05605, 88.8543)
+
+[node name="Chicken coop5" parent="Map" instance=ExtResource("9_2i1ss")]
+transform = Transform3D(-0.900768, 0, 0.427658, 0, 1, 0, -0.426157, 0, -0.903941, 33.665, 1.05605, 77.753)
+
+[node name="Chicken coop6" parent="Map" instance=ExtResource("9_2i1ss")]
+transform = Transform3D(-0.834446, 0, -0.546614, 0, 1, 0, 0.544695, 0, -0.837385, -2.89564, 1.05605, 81.1103)
 
 [node name="Pause menu" parent="." instance=ExtResource("3_iwbi1")]
 visible = false

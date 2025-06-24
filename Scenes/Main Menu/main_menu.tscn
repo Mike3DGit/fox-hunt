@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://qba7tv7uprpw"]
+[gd_scene load_steps=34 format=4 uid="uid://qba7tv7uprpw"]
 
 [ext_resource type="PackedScene" uid="uid://dj358lxqs66x0" path="res://Assets/Environment/Ground/terrain.tscn" id="2_hg5pd"]
 [ext_resource type="Texture2D" uid="uid://e2q2tla5j05h" path="res://Assets/Environment/Trees/Tree 1/Tree 1_vibrant_color_sheet_plus_skin_tones_and_more_now.png" id="3_fffpw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://doncm7ru28qoc" path="res://Assets/title card/Title.tscn" id="8_57ted"]
 [ext_resource type="Script" uid="uid://doxpfw1suqb6k" path="res://Scripts/menu Ui/ui.gd" id="8_rghun"]
 [ext_resource type="PackedScene" uid="uid://juqt68gl426x" path="res://Assets/Environment/moutians/Mountain 3/Mountain 3.tscn" id="8_s0nt6"]
+[ext_resource type="PackedScene" uid="uid://d2t2yfxq8ilao" path="res://Assets/Environment/chicken coop/Chicken coop.tscn" id="9_hg5pd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67b0c"]
 resource_name = "Material.001"
@@ -1099,6 +1100,24 @@ transform = Transform3D(5.2068, 0, -0.417454, 0, 4.20678, 0, 0.559113, 0, 3.8875
 
 [node name="Title" parent="Map" instance=ExtResource("8_57ted")]
 transform = Transform3D(1, 0, 0, 0, 0.998938, 0.0460778, 0, -0.0460778, 0.998938, 0, 7.25885, 24.3231)
+
+[node name="Chicken coop" parent="Map" instance=ExtResource("9_hg5pd")]
+transform = Transform3D(-0.905813, 0, -0.423678, 0, 1, 0, 0.423678, 0, -0.905813, 79.8531, 1.05605, 49.1306)
+
+[node name="Chicken coop2" parent="Map" instance=ExtResource("9_hg5pd")]
+transform = Transform3D(0.965587, 0, -0.337867, 0, 1, 0, -0.346624, 0, -0.941194, 47.6924, 1.05605, 64.1732)
+
+[node name="Chicken coop3" parent="Map" instance=ExtResource("9_hg5pd")]
+transform = Transform3D(-0.992723, 0, -0.0868777, 0, 1, 0, 0.0865727, 0, -0.996219, 24.0587, 1.05605, 72.6572)
+
+[node name="Chicken coop4" parent="Map" instance=ExtResource("9_hg5pd")]
+transform = Transform3D(-0.805021, 0, -0.58938, 0, 1, 0, 0.587311, 0, -0.807856, 13.8527, 1.05605, 88.4848)
+
+[node name="Chicken coop5" parent="Map" instance=ExtResource("9_hg5pd")]
+transform = Transform3D(-0.990359, 0, 0.110758, 0, 1, 0, -0.110369, 0, -0.993847, 43.9879, 1.05605, 89.8701)
+
+[node name="Chicken coop6" parent="Map" instance=ExtResource("9_hg5pd")]
+transform = Transform3D(-0.612198, 0, -0.789031, 0, 1, 0, 0.786261, 0, -0.614354, 77.4742, 1.05605, 74.8162)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0322481, 0.99948, 0, -0.99948, 0.0322481, 0, 3.9046, 0)

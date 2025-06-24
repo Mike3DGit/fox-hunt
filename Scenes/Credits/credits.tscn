@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5gpqbpgglrf4"]
+[gd_scene load_steps=5 format=3 uid="uid://b5gpqbpgglrf4"]
+
+[ext_resource type="Script" uid="uid://bpfbj8fpuwp4w" path="res://Scripts/Credits script/credits.gd" id="1_ykwev"]
 
 [sub_resource type="Animation" id="Animation_f78l2"]
 resource_name = "credits animation"
@@ -44,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ykwev")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -63,10 +66,22 @@ autoplay = "credits animation"
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 376.0
-offset_top = 718.0
+offset_top = -382.0
 offset_right = 844.0
-offset_bottom = 1078.0
+offset_bottom = -22.0
 text = "										Created by:
 											
 										mike3D - 3D artist, coder
 										Agile Sloth - coder"
+
+[node name="Back_to_menu_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 651.0
+offset_right = 282.0
+offset_bottom = 709.0
+scale = Vector2(0.635736, 0.624248)
+theme_override_font_sizes/font_size = 36
+text = "Back to menu"
+
+[connection signal="pressed" from="Back_to_menu_button" to="." method="_on_back_to_menu_button_pressed"]
