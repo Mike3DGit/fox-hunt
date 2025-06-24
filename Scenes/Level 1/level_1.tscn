@@ -202,36 +202,6 @@ background_color = Color(0.377764, 0.542968, 0.910423, 1)
 [node name="Player" parent="Map" instance=ExtResource("2_w4ye8")]
 transform = Transform3D(0.988369, 0, 0.152072, 0, 1, 0, -0.152072, 0, 0.988369, -0.149851, 2.62904, -0.142944)
 
-[node name="Terrains" type="Node3D" parent="Map"]
-transform = Transform3D(2.97827, 0, 0, 0, 1, 0, 0, 0, 2.71344, 0, 0, 0)
-
-[node name="terrain2" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 838.6, 0, -94.0508)
-
-[node name="terrain3" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -832.861, 0, -94.0508)
-
-[node name="terrain4" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -935.539)
-
-[node name="terrain5" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 838.6, 0, -935.539)
-
-[node name="terrain6" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -832.861, 0, -935.539)
-
-[node name="terrain7" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 746.262)
-
-[node name="terrain8" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 838.6, 0, 746.262)
-
-[node name="terrain9" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -832.861, 0, 746.262)
-
-[node name="terrain" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -94.0508)
-
 [node name="all trees" type="Node3D" parent="Map"]
 
 [node name="Trees" type="Node3D" parent="Map/all trees"]
@@ -1018,6 +988,12 @@ transform = Transform3D(-0.900768, 0, 0.427658, 0, 1, 0, -0.426157, 0, -0.903941
 [node name="Chicken coop6" parent="Map" instance=ExtResource("9_2i1ss")]
 transform = Transform3D(-0.834446, 0, -0.546614, 0, 1, 0, 0.544695, 0, -0.837385, -2.89564, 1.05605, 81.1103)
 
+[node name="Terrains" type="Node3D" parent="Map"]
+transform = Transform3D(2.97827, 0, 0, 0, 1, 0, 0, 0, 2.71344, 0, 0, 0)
+
+[node name="terrain" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
+transform = Transform3D(2.62425, 0, 0, 0, 1, 0, 0, 0, 4.70329, 0, 0, -94.0508)
+
 [node name="Pause menu" parent="." instance=ExtResource("3_iwbi1")]
 visible = false
 
@@ -1027,12 +1003,4 @@ environment = SubResource("Environment_wct5o")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0322481, 0.99948, 0, -0.99948, 0.0322481, 0, 3.9046, 0)
 
-[editable path="Map/Terrains/terrain2"]
-[editable path="Map/Terrains/terrain3"]
-[editable path="Map/Terrains/terrain4"]
-[editable path="Map/Terrains/terrain5"]
-[editable path="Map/Terrains/terrain6"]
-[editable path="Map/Terrains/terrain7"]
-[editable path="Map/Terrains/terrain8"]
-[editable path="Map/Terrains/terrain9"]
 [editable path="Map/Terrains/terrain"]

@@ -301,32 +301,8 @@ background_color = Color(0.377764, 0.542968, 0.910423, 1)
 [node name="Terrains" type="Node3D" parent="Map"]
 transform = Transform3D(2.97827, 0, 0, 0, 1, 0, 0, 0, 2.71344, 0, 0, 0)
 
-[node name="terrain2" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 838.6, 0, -94.0508)
-
-[node name="terrain3" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -832.861, 0, -94.0508)
-
-[node name="terrain4" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -935.539)
-
-[node name="terrain5" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 838.6, 0, -935.539)
-
-[node name="terrain6" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -832.861, 0, -935.539)
-
-[node name="terrain7" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 746.262)
-
-[node name="terrain8" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 838.6, 0, 746.262)
-
-[node name="terrain9" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -832.861, 0, 746.262)
-
 [node name="terrain" parent="Map/Terrains" instance=ExtResource("2_hg5pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -94.0508)
+transform = Transform3D(2.62425, 0, 0, 0, 1, 0, 0, 0, 4.70329, 0, 0, -94.0508)
 
 [node name="grass" type="Node3D" parent="Map"]
 
@@ -1186,12 +1162,4 @@ environment = SubResource("Environment_57ted")
 [connection signal="pressed" from="UI/Credits_button" to="UI" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="UI/Quit_button" to="UI" method="_on_quit_button_pressed"]
 
-[editable path="Map/Terrains/terrain2"]
-[editable path="Map/Terrains/terrain3"]
-[editable path="Map/Terrains/terrain4"]
-[editable path="Map/Terrains/terrain5"]
-[editable path="Map/Terrains/terrain6"]
-[editable path="Map/Terrains/terrain7"]
-[editable path="Map/Terrains/terrain8"]
-[editable path="Map/Terrains/terrain9"]
 [editable path="Map/Terrains/terrain"]
