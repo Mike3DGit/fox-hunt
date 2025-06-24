@@ -1,7 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://c0ovo5ghyym8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj358lxqs66x0" path="res://Assets/Environment/Ground/terrain.tscn" id="1_wct5o"]
-[ext_resource type="PackedScene" uid="uid://rvpx2yntsr4u" path="res://Assets/Player/player.tscn" id="2_w4ye8"]
 [ext_resource type="PackedScene" uid="uid://ckdaxb077trqb" path="res://Scenes/Pause Menu/pause_menu.tscn" id="3_iwbi1"]
 [ext_resource type="Texture2D" uid="uid://dvkrs30kqnuub" path="res://Assets/Environment/Trees/Tree 2/Tree 2_vibrant_color_sheet_plus_skin_tones_and_more_now.png" id="3_vvpoo"]
 [ext_resource type="Texture2D" uid="uid://bowip1aq481a4" path="res://Assets/Environment/Trees/Tree 3/Tree 3_vibrant_color_sheet_plus_skin_tones_and_more_now.png" id="4_gk6vi"]
@@ -10,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://eu760qe08ra2" path="res://Assets/Environment/moutians/Mountain 2/Mountain 2.tscn" id="7_cfp1e"]
 [ext_resource type="PackedScene" uid="uid://juqt68gl426x" path="res://Assets/Environment/moutians/Mountain 3/Mountain 3.tscn" id="8_6g6qt"]
 [ext_resource type="PackedScene" uid="uid://d2t2yfxq8ilao" path="res://Assets/Environment/chicken coop/Chicken coop.tscn" id="9_2i1ss"]
+[ext_resource type="PackedScene" uid="uid://cdk6hwb4hi2wc" path="res://Scenes/PlayerPrefab/player.tscn" id="10_2i1ss"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67b0c"]
 resource_name = "Material.001"
@@ -198,9 +198,6 @@ background_color = Color(0.377764, 0.542968, 0.910423, 1)
 [node name="Level 1" type="Node"]
 
 [node name="Map" type="Node3D" parent="."]
-
-[node name="Player" parent="Map" instance=ExtResource("2_w4ye8")]
-transform = Transform3D(0.988369, 0, 0.152072, 0, 1, 0, -0.152072, 0, 0.988369, -0.149851, 2.62904, -0.142944)
 
 [node name="all trees" type="Node3D" parent="Map"]
 
@@ -994,6 +991,13 @@ transform = Transform3D(2.97827, 0, 0, 0, 1, 0, 0, 0, 2.71344, 0, 0, 0)
 [node name="terrain" parent="Map/Terrains" instance=ExtResource("1_wct5o")]
 transform = Transform3D(2.62425, 0, 0, 0, 1, 0, 0, 0, 4.70329, 0, 0, -94.0508)
 
+[node name="Plane" parent="Map/Terrains/terrain" index="0"]
+layers = 3
+
+[node name="StaticBody3D" parent="Map/Terrains/terrain/Plane" index="0"]
+collision_layer = 3
+collision_mask = 3
+
 [node name="Pause menu" parent="." instance=ExtResource("3_iwbi1")]
 visible = false
 
@@ -1002,5 +1006,8 @@ environment = SubResource("Environment_wct5o")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0322481, 0.99948, 0, -0.99948, 0.0322481, 0, 3.9046, 0)
+
+[node name="Player" parent="." instance=ExtResource("10_2i1ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53658, 0)
 
 [editable path="Map/Terrains/terrain"]

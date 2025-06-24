@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://b3k110sd6yf1a"]
+
+[ext_resource type="AudioStream" uid="uid://eflyll2wgxjq" path="res://Scenes/PlayerPrefab/Sounds/footsteps_player_grass_01.ogg" id="1_lx710"]
+[ext_resource type="AudioStream" uid="uid://dwoyrfdoqvww3" path="res://Scenes/PlayerPrefab/Sounds/footsteps_player_grass_02.ogg" id="2_d6jkp"]
+[ext_resource type="AudioStream" uid="uid://bhn4bxdiujqq8" path="res://Scenes/PlayerPrefab/Sounds/footsteps_player_grass_03.ogg" id="3_6cboc"]
+
+[resource]
+random_pitch = 1.2
+random_volume_offset_db = 1.0
+streams_count = 3
+stream_0/stream = ExtResource("1_lx710")
+stream_1/stream = ExtResource("2_d6jkp")
+stream_2/stream = ExtResource("3_6cboc")
