@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm3qlxhxe7etb"]
+
+[ext_resource type="Script" uid="uid://dp8fpvl6e0ood" path="res://Scripts/Settings/settings.gd" id="1_it58s"]
+
+[node name="Settings_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_it58s")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Volume_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume:"
+
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 30.0
+
+[node name="Mute_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute:"
+
+[node name="Mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="go_back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 549.0
+offset_right = 129.0
+offset_bottom = 580.0
+theme_override_font_sizes/font_size = 41
+text = "Back to menu"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="pressed" from="go_back_button" to="." method="_on_go_back_button_pressed"]
