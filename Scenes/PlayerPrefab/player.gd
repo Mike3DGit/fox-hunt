@@ -72,7 +72,7 @@ func _rotate_camera(sens_mod: float = 1.0) -> void:
 	anchor.rotation.x = clamp(anchor.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
 
 func _walk(delta: float) -> Vector3:
-	move_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	move_dir = Input.get_vector("ui_left", "ui_right", "string_throttle_input", "ui_down")
 	var _forward: Vector3 = camera.global_transform.basis * Vector3(move_dir.x, 0, move_dir.y)
 	var walk_dir: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
 	var target_speed = walk_dir * speed * move_dir.length()

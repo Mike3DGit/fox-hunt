@@ -15,7 +15,7 @@ func check_transitions():
 		if Vector3.UP.dot(collision_normal) < 0.707:  # 1.0 - 0 deg, .707 - 45 deg, 0.259 - 75 deg, 0 - 90 deg, 
 			Transitioned.emit(self, 'Sliding')
 	
-	if Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") != Vector2.ZERO:
+	if Input.get_vector("ui_left", "ui_right", "string_throttle_input", "ui_down") != Vector2.ZERO:
 		Transitioned.emit(self, 'Walking')
 	if Input.is_action_pressed("crouch"):
 		Transitioned.emit(self, 'Crouching')

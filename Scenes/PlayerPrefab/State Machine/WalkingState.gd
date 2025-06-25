@@ -40,7 +40,7 @@ func check_transitions() -> void:
 	
 	if (Input.is_action_pressed("crouch") and player.velocity.length() > 10): 
 		Transitioned.emit(self, 'Sliding')
-	if Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") == Vector2.ZERO:
+	if Input.get_vector("ui_left", "ui_right", "string_throttle_input", "ui_down") == Vector2.ZERO:
 		Transitioned.emit(self, 'Idle')
 	if Input.is_action_pressed("crouch"):
 		Transitioned.emit(self, 'Crouching')
