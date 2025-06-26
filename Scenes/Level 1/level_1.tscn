@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d2t2yfxq8ilao" path="res://Assets/Environment/chicken coop/Chicken coop.tscn" id="9_2i1ss"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="10_2i1ss"]
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="10_ajth6"]
-[ext_resource type="Script" uid="uid://7k68jdwj27y" path="res://Scripts/following_camera.gd" id="11_mki1f"]
+[ext_resource type="Script" path="res://Scripts/following_camera.gd" id="11_mki1f"]
 [ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="12_yldek"]
 [ext_resource type="PackedScene" uid="uid://cdk6hwb4hi2wc" path="res://Scenes/PlayerPrefab/player.tscn" id="14_yldek"]
 
