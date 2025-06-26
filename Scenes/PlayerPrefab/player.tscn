@@ -183,8 +183,8 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 
 [node name="ScoreManager" type="Node" parent="."]
 script = ExtResource("1_ocky0")

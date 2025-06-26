@@ -41,7 +41,7 @@ func _gravity(delta: float) -> Vector3:
 	return grav_vel
 
 func _walk(delta: float) -> Vector3:
-	move_dir = Input.get_vector("ui_left", "ui_right", "string_throttle_input", "ui_down")
+	move_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var _forward: Vector3 = camera.global_transform.basis * Vector3(move_dir.x, 0, move_dir.y)
 	var walk_dir: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
 	var target_speed = walk_dir * speed * move_dir.length()

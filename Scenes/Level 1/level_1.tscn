@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://c0ovo5ghyym8x"]
+[gd_scene load_steps=34 format=4 uid="uid://c0ovo5ghyym8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj358lxqs66x0" path="res://Assets/Environment/Ground/terrain.tscn" id="1_wct5o"]
 [ext_resource type="PackedScene" uid="uid://ckdaxb077trqb" path="res://Scenes/Pause Menu/pause_menu.tscn" id="3_iwbi1"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="10_ajth6"]
 [ext_resource type="Script" uid="uid://7k68jdwj27y" path="res://Scripts/following_camera.gd" id="11_mki1f"]
 [ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="12_yldek"]
+[ext_resource type="PackedScene" uid="uid://cdk6hwb4hi2wc" path="res://Scenes/PlayerPrefab/player.tscn" id="14_yldek"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67b0c"]
 resource_name = "Material.001"
@@ -1004,13 +1005,13 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -2.3, -94.051)
 layers = 3
 
 [node name="Road" type="StaticBody3D" parent="Map" groups=["Road"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.978421, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Road"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01372, -140.843)
 mesh = SubResource("BoxMesh_ajth6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, -141.222)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -141.222)
 shape = SubResource("BoxShape3D_yldek")
 
 [node name="Pause menu" parent="." instance=ExtResource("3_iwbi1")]
@@ -1023,11 +1024,10 @@ environment = SubResource("Environment_wct5o")
 transform = Transform3D(1, 0, 0, 0, 0.0322481, 0.99948, 0, -0.99948, 0.0322481, 0, 3.9046, 0)
 
 [node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("10_ajth6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86065, 1.45707, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.759661, 1.45707, 0)
 vehicle_node = NodePath("VehicleRigidBody")
 
 [node name="VehicleRigidBody" parent="VehicleController" instance=ExtResource("10_2i1ss")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926611, 0)
 center_of_mass_mode = 1
 linear_damp_mode = 1
 angular_damp_mode = 1
@@ -1036,9 +1036,12 @@ angular_damp_mode = 1
 max_db = -24.0
 vehicle = NodePath("..")
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
+[node name="CarCamera" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02494, 2.95704, 2.14846)
 script = ExtResource("11_mki1f")
 follow_this = NodePath("../VehicleController/VehicleRigidBody")
+
+[node name="Player" parent="." instance=ExtResource("14_yldek")]
+transform = Transform3D(0.75366, 0, 0, 0, 0.75366, 0, 0, 0, 0.75366, 0, 1.21103, 3.71473)
 
 [editable path="Map/Terrains/terrain"]

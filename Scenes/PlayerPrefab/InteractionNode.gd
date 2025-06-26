@@ -6,6 +6,7 @@ var collider
 @onready var player = $".."
 @onready var inventory_node = $"../InventoryNode"
 @onready var active_item_spot = $"../Anchor/ActiveItemSpot"
+@export var push_strength : int = 5000
 
 
 func _ready():
@@ -34,8 +35,9 @@ func handle_interactions():
 		if collider.has_method('interact'):
 			$"../InventoryNode/DebugLabel2".text = 'Interacted with ' + collider.name
 			collider.interact()
-			return
-		else: if collider is RigidBody3D:
-				var impulse = player.position.direction_to(collider.position).normalized()*50
+		elif collider.has_method('make_active'):
+			pass
+		elif collider is RigidBody3D:
+				var impulse = player.position.direction_to(collider.position).normalized()*push_strength
 				collider.apply_central_force(impulse)
 				$"../InventoryNode/DebugLabel2".text = 'Pushed ' + collider.name
