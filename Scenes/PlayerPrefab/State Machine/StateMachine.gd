@@ -85,7 +85,7 @@ func on_child_transition(state, new_state_name):
 	current_state = new_state
 	#print('Transitioned to: ', new_state_name)
 	$"../CurrentState".text = current_state.name
-	print('Transitioned ', state, ' ', new_state)
+	#print('Transitioned ', state, ' ', new_state)
 
 # Mouse controls
 func _unhandled_input(event: InputEvent) -> void:
