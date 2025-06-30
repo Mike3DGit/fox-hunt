@@ -3,8 +3,9 @@
 
 class_name Vehicle
 extends RigidBody3D
-
-@export var is_active: bool = false
+var camera : Camera3D = null
+var player : CharacterBody3D = null
+var player_camera : Camera3D = null
 
 @export_group("Wheel Nodes")
 ## Assign this to the Wheel [RayCast3D] that is this vehicle's front left wheel.
@@ -426,6 +427,15 @@ class Axle:
 func _ready():
 	initialize()
 
+func create_following_camera():
+	camera = Camera3D.new()
+	var script = load("res://Scripts/following_camera.gd")
+	camera.name = 'CarCamera'
+	get_node('../..').add_child.call_deferred(camera)
+	camera.set_script(script)
+	camera.call_deferred('set_global_position', to_global($body.position + Vector3(0, 2, 4))) 
+	camera.follow_this = self
+
 func _integrate_forces(state : PhysicsDirectBodyState3D):
 	current_gravity = state.total_gravity
 
@@ -604,9 +614,13 @@ func initialize():
 	
 	is_ready = true
 
+func _unhandled_input(event: InputEvent) -> void:
+	if get_parent().is_active: # Leaving the car
+		if Input.is_action_just_pressed("interact"): 
+			get_viewport().set_input_as_handled()
+			make_inactive()
+
 func _physics_process(delta : float) -> void:
-	if not is_active:
-		return
 	
 	if not is_ready:
 		return
@@ -623,6 +637,7 @@ func _physics_process(delta : float) -> void:
 	local_velocity = lerp(((global_transform.origin - previous_global_position) / delta) * global_transform.basis, local_velocity, 0.5)
 	previous_global_position = global_position
 	speed = local_velocity.length()
+	
 	
 	process_drag()
 	process_braking(delta)
@@ -1079,3 +1094,21 @@ func calculate_damping(weight : float, spring_rate : float, damping_ratio : floa
 
 func calculate_axle_spring_force(compression : float, spring_length : float, spring_rate : float) -> float:
 	return spring_length * compression * 1000.0 * spring_rate * 2.0
+
+# Hide the player and switch controls to the car
+func make_active(player, player_camera) -> void:
+	self.player = player
+	self.player_camera = player_camera
+	get_parent().is_active = true
+	if camera == null:
+		create_following_camera()
+
+# Return controls to the player
+func make_inactive() -> void:
+	get_parent().is_active = false
+	get_node('../../').add_child(player)
+	player.global_position = $CarExit.global_position
+	player.velocity = local_velocity
+	player_camera.make_current()
+	self.player = null
+	self.player_camera = null

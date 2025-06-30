@@ -421,3 +421,6 @@ wheel_node = NodePath("RearRightWheel")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
 mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
+
+[node name="CarExit" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15012, 0.615182, -0.0211823)
