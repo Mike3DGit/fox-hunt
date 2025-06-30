@@ -18,6 +18,7 @@ func _process(_delta):
 		handle_interactions()
 
 func handle_interactions():
+	
 	collider = InteractRay.get_collider()
 	$"../InventoryNode/DebugLabel".text = collider.name if collider else ''
 	# Picking up
@@ -32,10 +33,14 @@ func handle_interactions():
 			talkable.start_conversation()
 			return
 	# Interacting and pushing
-		if collider.has_method('interact'):
+		if collider.has_method('interact'): # Interacting with objects like mechanisms, doors etc
 			$"../InventoryNode/DebugLabel2".text = 'Interacted with ' + collider.name
 			collider.interact()
-		elif collider.has_method('make_active'):
+		elif collider.has_method('make_active'): # Getting in the car / switching characters etc. Receiving node needs to have a 'camera' attribute with a camera to switch to
+			collider.make_active(player, $"../Anchor/Camera")
+			player.get_parent().remove_child(player)
+
+		elif collider.has_method('drag'): # Dragging large objects
 			pass
 		elif collider is RigidBody3D:
 				var impulse = player.position.direction_to(collider.position).normalized()*push_strength

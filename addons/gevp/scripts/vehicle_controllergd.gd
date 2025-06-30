@@ -47,7 +47,15 @@ class_name VehicleController
 ## [br]Leave blank to disable.
 @export var string_shift_down: String = ""
 
+var is_active : bool = false
+
 func _physics_process(_delta):
+	if not is_active:
+		vehicle_node.brake_input = 0.2
+		vehicle_node.steering_input = 0
+		vehicle_node.throttle_input = 0
+		vehicle_node.clutch_input = 0
+		return
 	
 	if string_brake_input != "":
 		vehicle_node.brake_input = Input.get_action_strength(string_brake_input)
