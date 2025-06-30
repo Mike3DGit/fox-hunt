@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4cifve1irwhu"]
+
+[ext_resource type="Script" uid="uid://qfxu6ybxlr2x" path="res://Scripts/dialogue.gd" id="1_cjnhg"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 358.0
+offset_top = 519.0
+offset_right = -439.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cjnhg")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -7.99999
+offset_right = 326.0
+offset_bottom = 116.0
+scale = Vector2(1.21781, 1.28265)
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 133.0
+offset_bottom = 40.0
+text = "name:"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_top = 31.0
+offset_right = 341.0
+offset_bottom = 121.0
+text = "chatting..."
