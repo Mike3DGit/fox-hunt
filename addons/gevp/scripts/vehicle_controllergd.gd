@@ -50,6 +50,7 @@ class_name VehicleController
 var is_active : bool = false
 
 func _physics_process(_delta):
+	# If no one is in the car - slow it down
 	if not is_active:
 		vehicle_node.brake_input = 0.2
 		vehicle_node.steering_input = 0
